@@ -5,6 +5,7 @@ import { animals } from './animals';
 //container variables
 const container = document.getElementById('app');
 const root = createRoot(container);
+const showBackground = true;
 const background = <img src='/images/ocean.jpg'
 alt='ocean'
 className="background"/>;
@@ -33,8 +34,8 @@ function displayFact(e){
 };
 const animalFacts = (
   <div>
-  {background}
-    <h1>{title == ""  ? "Click an animal for a fun fact" : title}</h1>
+  {showBackground && background}
+    <h1>{title || "Click an animal for a fun fact"}</h1>
     <div className="animals">{images}</div>
     <p id="fact"></p>
   </div>
